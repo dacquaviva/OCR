@@ -1,0 +1,9 @@
+.cache/
+.git/
+.venv/
+.envrc
+docs/
+output*/
+utilities/
+*.md
+*Dockerfile

@@ -1,0 +1,9 @@
+numpy==1.22.3
+opencv-python==4.5.5.64
+pika==1.2.0
+tritonclient
+geventhttpclient
+redis==4.5.4
+shapely==2.0.1
+Flask
+pytest

@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  inference-tritonserver:
+    build:
+      context:  inference-tritonserver
+      dockerfile: Dockerfile
+    image:  inference-tritonserver
+    container_name: inference-tritonserver
+    restart: "unless-stopped"
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]
+    # volumes:
+    #   - ./model_repository:/model_repository
+    entrypoint:
+      - "tritonserver"
+      - "--model-repository=/model_repository"
+
+      
+  inference_ocr-flask:
+    build:
+      context: inference_ocr
+      dockerfile: Dockerfile
+    image: inference_ocr-flask
+    container_name: inference_ocr-flask
+    env_file: .env
+    restart: "unless-stopped"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - inference-tritonserver
+    entrypoint:
+      - "./wait-for-it.sh"
+      - "inference-tritonserver:8000"
+      - "--"
+      - "python"
+      - "-um"
+      - "src.inference_ocr.entrypoints.flask_app"
