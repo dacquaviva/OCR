@@ -46,3 +46,7 @@ The PaddlePaddle models have been converted to ONNX format for deployment. For i
 [PaddleOCR Paddle2ONNX Conversion Guide](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/deploy/paddle2onnx/readme.md)
 
 This guide provides detailed steps for converting both the text detection and text recognition models to ONNX format.
+
+## Further Optimization
+
+For even better performance, especially on NVIDIA GPUs, the ONNX models can be further optimized by converting them to TensorRT format. TensorRT can significantly accelerate inference by using optimized CUDA kernels and mixed precision arithmetic.

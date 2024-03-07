@@ -8,13 +8,11 @@ services:
     image:  inference-tritonserver
     container_name: inference-tritonserver
     restart: "unless-stopped"
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - capabilities: [gpu]
-    # volumes:
-    #   - ./model_repository:/model_repository
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
     entrypoint:
       - "tritonserver"
       - "--model-repository=/model_repository"
