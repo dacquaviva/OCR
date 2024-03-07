@@ -2,6 +2,8 @@
 
 This guide provides instructions on how to compile ONNX models, including YOLOv8 for text detection, for use with Hailo-8 devices using the Hailo Model Zoo.
 
+![alt text](./inference_pipeline/cascaded_nets_pipeline.png "Pipiline")
+
 ## Prerequisites
 
 - A working Hailo Model Zoo environment
@@ -72,6 +74,3 @@ For further assistance, please consult the Hailo Model Zoo documentation or cont
 - [Hailo Model Zoo Documentation](https://hailo.ai/developer-zone/documentation/model-zoo/)
 - [Hailo Developer Zone](https://hailo.ai/developer-zone/)
 
-## License
-
-Please refer to the Hailo Model Zoo license for usage terms and conditions.
