@@ -28,7 +28,6 @@ class MessageHandler:
             for couple_crop in couple_cropped_images:
                 raw_output_1, confidence_1 = self.text_recognizer(couple_crop["crop1"])
                 raw_output_2, confidence_2 = self.text_recognizer(couple_crop["crop2"])
-                #TODO use the coordinate system of pV
                 final_results.append({"raw_output_1": raw_output_1, "raw_output_2": raw_output_2, "confidence_1": confidence_1, "confidence_2": confidence_2, "coordinates": couple_crop["coordinates"]})
                 # final_results.append({"raw_output_1": raw_output_1, "raw_output_2": raw_output_2, "confidence_1": confidence_1, "confidence_2": confidence_2, "coordinates"})
                 # final_results.append({"raw_output_1": raw_output_1, "raw_output_2": raw_output_2, "confidence_1": confidence_1, "confidence_2": confidence_2})
