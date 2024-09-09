@@ -1,5 +1,7 @@
 # OCR in the Wild: Cloud and Edge Implementations
 
+![alt text](./ocr_system.png "Pipiline")
+
 ## Overview
 
 This repository demonstrates implementations of Optical Character Recognition (OCR) for text in the wild, designed for both cloud and edge deployment scenarios. Our goal is to provide flexible, efficient OCR solutions that can be adapted to various use cases and hardware constraints.
