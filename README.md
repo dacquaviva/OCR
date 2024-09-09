@@ -58,6 +58,7 @@ For more details, see the [Edge OCR README](./edge/README.md).
 |------------------------|--------------------------------------------|-----------------------------------------|
 | Deployment Target      | High-performance cloud servers             | Resource-constrained edge devices       |
 | Model Source           | Pre-trained PaddlePaddleOCR                | Custom-trained lightweight models (Compatible ops)      |
+| Text Detection         | Advanced detection model                   | Yolov8
 | Text Recognition       | Advanced LSTM-based model                  | Compact CNN with CTC loss               |
 | Inference Server       | Triton Inference Server                    | Direct inference  |
 | Primary Advantages     | High accuracy, scalability, centralized    | Low latency, minimal resource usage, privacy, offline, cost     |
