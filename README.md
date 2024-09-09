@@ -14,13 +14,6 @@ Our OCR system employs a two-step process for accurate text recognition in natur
 
 2. **Text Recognition**: After detection, the identified text regions are cropped and batched. These batches are then passed through a recognition model that converts the image of text into machine-readable characters.
 
-This two-step approach allows for:
-- Efficient processing of images with multiple text instances
-- Improved accuracy by focusing the recognition model on specific text regions
-- Flexibility in handling various text orientations and layouts
-
-Both our cloud and edge implementations follow this two-model approach, with optimizations specific to their deployment environments.
-
 ## Repository Structure
 
 This repository is divided into two main sections:
@@ -64,14 +57,10 @@ For more details, see the [Edge OCR README](./edge/README.md).
 | Feature                | Cloud OCR                                  | Edge OCR                                |
 |------------------------|--------------------------------------------|-----------------------------------------|
 | Deployment Target      | High-performance cloud servers             | Resource-constrained edge devices       |
-| Model Source           | Pre-trained PaddlePaddleOCR                | Custom-trained lightweight models       |
-| Model Format           | ONNX (convertible to TensorRT)             | PyTorch (convertible to ONNX/TensorRT)  |
-| Text Detection         | High-accuracy, GPU-optimized               | Lightweight, speed-optimized            |
+| Model Source           | Pre-trained PaddlePaddleOCR                | Custom-trained lightweight models (Compatible ops)      |
 | Text Recognition       | Advanced LSTM-based model                  | Compact CNN with CTC loss               |
-| Inference Server       | Triton Inference Server                    | Direct inference or lightweight server  |
-| API                    | Flask                                      | Optional lightweight API                |
-| Batching               | Efficient GPU batching                     | Memory-conscious batching               |
-| Primary Advantages     | High accuracy, scalability                 | Low latency, minimal resource usage     |
+| Inference Server       | Triton Inference Server                    | Direct inference  |
+| Primary Advantages     | High accuracy, scalability, centralized    | Low latency, minimal resource usage, privacy, offline, cost     |
 
 ## Getting Started
 
